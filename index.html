@@ -170,7 +170,7 @@
       <p><a href="https://pongonpolygon.github.io/blooket-cheats-tutorial">Blooket Cheats Tutorial</a></p>
       <p><a href="https://github.com/jokeri2222/KaHack/blob/main/KaHack!.user.js">KaHack</a></p>
 
-      <!-- ts goofy ah -->
+      <!-- Email -->
       <p>(Email me if you need anything  @ "@monkgames.github@gmail.com")</p>
     </div>
     
@@ -182,5 +182,32 @@
         <a href="https://docs.google.com/forms/d/1rFc2fp75NW6-vMwHqLnTkN3R6is6mNf5eQUdfwllEeg/edit">Suggest Websites</a>
       </div>
     </footer>
+    <script>
+      // Find all links on the page
+      document.querySelectorAll("a").forEach(link => {
+        // Skip links that already contain an image (like your favicon or GitHub icon)
+        if (link.querySelector("img")) return;
+
+        // Get domain name from link
+        let domain;
+        try {
+          domain = new URL(link.href).origin;
+        } catch {
+          return; // skip if invalid URL
+        }
+
+        // Create favicon image
+        const icon = document.createElement("img");
+        icon.src = `https://www.google.com/s2/favicons?sz=32&domain_url=${domain}`;
+        icon.alt = "favicon";
+        icon.style.width = "1em";
+        icon.style.height = "1em";
+        icon.style.verticalAlign = "top";
+        icon.style.marginRight = "10px";
+
+        // Insert favicon before the link text
+        link.prepend(icon);
+      });
+    </script>
   </body>
 </html>
